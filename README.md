@@ -31,3 +31,5 @@
 ## Скриншоты и демо
 
 Немного скриншотов того, как это сейчас выглядит
+
+![image](https://user-images.githubusercontent.com/43165502/229312224-d6c44bee-fb08-45ef-ae22-4e27983c159c.png)
