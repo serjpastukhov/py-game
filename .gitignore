@@ -8,4 +8,5 @@ __pycache__/
 dist/
 my_game_venv/
 build/
+assets/
 *.spec
