@@ -1,0 +1,11 @@
+# Python cache and bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+
+dist/
+my_game_venv/
+build/
+*.spec
