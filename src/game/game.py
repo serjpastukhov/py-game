@@ -1,13 +1,16 @@
 import pygame
-from player import Player
-from camera import Camera
+from .player import Player
+from .camera import Camera
+from .level import Level
 
 class Game:
     def __init__(self):
         self.screen = pygame.display.set_mode((800, 600))
         self.clock = pygame.time.Clock()
-        self.player = Player(50, 50)
-        self.camera = Camera(3200, 3200, 800, 600)
+        self.player = Player(50, 50, 50, 50)
+        self.camera = Camera(1200, 1200, 800, 600)
+        self.level = Level()
+        self.level.create_obstacles()
 
     # Функция обработки событий
     def handle_events(self):
@@ -37,7 +40,8 @@ class Game:
     # Функция обновления состояния игры
     def update(self):
         self.camera.update()
-        self.player.update()
+        self.player.update(self.level.obstacles)
+        self.player.check_collision(self.level.obstacles)
 
     # Функция рисования игровых объектов
     def draw(self):
@@ -53,6 +57,7 @@ class Game:
                 rect = pygame.Rect(i, j, cell_size, cell_size)
                 adjusted_rect = self.camera.apply_float(rect)
                 pygame.draw.rect(self.screen, color, pygame.Rect(round(adjusted_rect.x), round(adjusted_rect.y), cell_size, cell_size))
+        self.level.draw(self.screen, self.camera)
         self.player.draw(self.screen, self.camera.apply)
         pygame.display.flip()
 

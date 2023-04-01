@@ -10,6 +10,7 @@ class Camera:
         self.height = height
         self.screen_width = screen_width
         self.screen_height = screen_height
+        self.rect = pygame.Rect(0, 0, self.width, self.height)
 
     def move(self, dx, dy):
         new_target_position = self.target_position + pygame.math.Vector2(dx, dy)
