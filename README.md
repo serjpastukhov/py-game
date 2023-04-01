@@ -17,11 +17,12 @@
 
 Клонируем себе проект и в папке проекта из терминала выполняем
 
-'python -m venv my_virtual_env'
+`python -m venv my_virtual_env`
 
 Активируем окружение
 
-'.\my_virtual_env\Scripts\activate'
+`.\my_virtual_env\Scripts\activate`
 
 Затем докидываем из requirements.txt либы в окружение
 
+`pip install -r requirements.txt`
